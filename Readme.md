@@ -6,6 +6,10 @@ Medium folder consists of android app looking ui while Large folder consists of 
 The app.js file is separated in two modules one serve for medium and other serve for large separated by useMediaQuery.
 The whole app is build using type = modules. 
 
+## Link of the website 
+
+    https://housedeck-furniture-renting.firebaseapp.com/
+
 ## The theme of the website is
 
     color : mediumblue
@@ -38,7 +42,7 @@ The whole app is build using type = modules.
 
 ## Packages for server side (external)
 
-    npm i express mongoose node-fetch dotenv nodemon body-parser cors
+    npm i express mongoose node-fetch dotenv nodemon body-parser cors twilio
 
 ## Packages description (external)
 
@@ -65,6 +69,7 @@ The whole app is build using type = modules.
         body-parser : using body-parser as middleware
         cors : for removing cors key origin error
         nodemon : for auto-restating the server whenever a change is made
+        twilio :' for using features provided by twilio
 
 ## Commits
 
@@ -75,3 +80,8 @@ The whole app is build using type = modules.
         Installed needed packages for our project
         Added readme and important information
         Create Header for this project (without backend)
+
+    -> Third Commit (13-05-2022)
+        Making Full Login and signup (with backend)
+        Created Header for Medium website
+        Created Bottom Tabs for Medium Website

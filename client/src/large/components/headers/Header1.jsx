@@ -11,8 +11,10 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Search from '../search/Search';
 import Login from '../login/Login';
+import { LoginContext } from '../../../context/Context'
 
 const Header1 = () => {
+    const { userData, isLogin, decrypt } = React.useContext(LoginContext)
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -30,7 +32,7 @@ const Header1 = () => {
 
 
                         <Box sx={{
-                            width: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee", borderLeft: "1px solid #eee",
+                            minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee", borderLeft: "1px solid #eee",
                             '&:hover': {
                                 background: '#eee'
                             }
@@ -39,18 +41,37 @@ const Header1 = () => {
                         </Box>
 
 
-                        <Box onClick={handleClickOpen} sx={{
-                            width: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee",
-                            '&:hover': {
-                                background: '#eee'
+                        <Box
+                            onClick={isLogin ? null : handleClickOpen}
+                            sx={{
+                                minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee",
+                                '&:hover': {
+                                    background: '#eee'
+                                }
+                            }}>
+                            {
+                                isLogin ?
+                                    <Box sx={{
+                                        width: '130px', m: '0px auto', textAlign: 'center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: "1px solid #eee", height: "64px",
+                                        '&:hover': {
+                                            background: '#eee'
+                                        }
+                                    }}>
+                                        <AccountCircleOutlinedIcon sx={{ fontSize: '25px' }} />
+                                        <Typography sx={{ fontFamily: 'Jost',ml:1 }}>
+                                            {
+                                                decrypt(userData.USERDATA_AS_USERNAME)
+                                            }
+                                        </Typography>
+                                    </Box>
+                                    :
+                                    <AccountCircleOutlinedIcon sx={{ fontSize: '25px' }} />
                             }
-                        }}>
-                            <AccountCircleOutlinedIcon sx={{ fontSize: '25px' }} />
                         </Box>
 
 
                         <Box sx={{
-                            width: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee",
+                            minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee",
                             '&:hover': {
                                 background: '#eee'
                             }
@@ -66,7 +87,7 @@ const Header1 = () => {
                             }
                         }}>
                             <LocationOnIcon sx={{ fontSize: '25px', transform: 'rotateY(180deg)' }} />
-                            <Typography sx={{ fontFamily: 'Marcellus SC', fontWeight: '500' }}>
+                            <Typography sx={{ fontFamily: 'Jost', fontWeight: '500' }}>
                                 Your City
                             </Typography>
                         </Box>

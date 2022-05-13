@@ -28,7 +28,8 @@ export default function Search() {
                         height: '35px',
                         fontSize: '14px',
                         paddingLeft: '20px',
-                        color: 'mediumblue'
+                        color: 'mediumblue',
+                        fontFamily: "Jost",
                     }} />
                 <SearchIcon sx={{ background: 'mediumblue', color: 'white', cursor: 'pointer', px: 1, height: '39.4px', }} />
             </Box>
