@@ -6,9 +6,6 @@ export default function HomeMedium() {
   return (
     <>
     <HeaderMedium />
-    <div style={{height:'100vh'}}>
-
-    </div>
     <BottomTabs />
     </>
   )

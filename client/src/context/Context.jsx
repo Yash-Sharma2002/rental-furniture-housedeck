@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import CryptoJS from 'crypto-js'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
@@ -12,16 +12,18 @@ export const LoginContext = React.createContext(null);
 
 const ContextProvider = ({ children }) => {
 
+    const fetchandCheck = useRef(() => { })
+    const loadCity = useRef(() => { })
     const [message, setMessage] = React.useState('')
     const [messageType, setMessageType] = React.useState('')
-    const [city, setCity] = React.useState("")
+    const [city, setCity] = React.useState("Your City")
     const [show, setShow] = React.useState(false)
     const isLogin = forCheckingLogin()
     const userData = loadUserData()
 
     React.useEffect(() => {
-        fetchandCheck()
-        setCity(loadCity())
+        fetchandCheck.current()
+        setCity(loadCity.current())
     }, [])
 
     const handleAlertClose = () => {
@@ -30,6 +32,14 @@ const ContextProvider = ({ children }) => {
         setMessageType('')
     }
 
+    const handleData = (data) => {
+        setCity(data)
+        try {
+            localStorage.setItem('CENTER_DATA', JSON.stringify(encrypt(data)));
+        } catch (err) {
+            return '';
+        }
+    }
 
     function encrypt(text) {
         var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(text), 'housedeck-is in-bangalore').toString();
@@ -76,12 +86,11 @@ const ContextProvider = ({ children }) => {
         }
     }
 
-    function fetchandCheck() {
+    fetchandCheck.current = () => {
         try {
             localStorage.getItem('INIT_DATA')
             localStorage.getItem('START_DATA')
             localStorage.getItem('CENTER_DATA')
-
         }
         catch (err) {
             localStorage.setItem('INIT_DATA', JSON.stringify(false));
@@ -90,20 +99,13 @@ const ContextProvider = ({ children }) => {
                 USERDATA_AS_USERNAME: '',
                 USERDATA_AS_EMAIL: '',
             }))
-            localStorage.setItem('CENTER_DATA', JSON.stringify(''));
+            localStorage.setItem('CENTER_DATA', JSON.stringify(encrypt('Your City')));
         }
     }
 
-    const handleData = (data) => {
-        setCity(data)
-        try {
-            localStorage.setItem('CENTER_DATA', JSON.stringify(encrypt(data)));
-        } catch (err) {
-            return '';
-        }
-    }
 
-    function loadCity() {
+
+    loadCity.current = () => {
         try {
             const serializedState = localStorage.getItem('CENTER_DATA')
             if (serializedState === null) {
@@ -111,7 +113,7 @@ const ContextProvider = ({ children }) => {
             }
             return decrypt(JSON.parse(serializedState))
         } catch (err) {
-            localStorage.setItem('CENTER_DATA', JSON.stringify(''));
+            localStorage.setItem('CENTER_DATA', JSON.stringify(encrypt('Your City')));
             const serializedState = localStorage.getItem('CENTER_DATA')
             if (serializedState === null) {
                 return '';

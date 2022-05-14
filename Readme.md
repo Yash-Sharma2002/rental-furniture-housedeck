@@ -79,9 +79,15 @@ The whole app is build using type = modules.
     -> Second Commit (12-05-2022)
         Installed needed packages for our project
         Added readme and important information
-        Create Header for this project (without backend)
+        Create Header for this project (without backend for large)
 
     -> Third Commit (13-05-2022)
-        Making Full Login and signup (with backend)
+        Making Full Login and signup (with backend for large)
         Created Header for Medium website
         Created Bottom Tabs for Medium Website
+
+    -> Fourth Commit (14-05-2022)
+        Making Full Login and signup (with backend for medium)
+        Added Search to Medium website
+        Added Select City for Medium and large
+        Added Dummy Profile page to medium

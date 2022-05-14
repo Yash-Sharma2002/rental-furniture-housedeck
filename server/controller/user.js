@@ -20,7 +20,6 @@ export const userLogIn = async (req, res) => {
     try {
         const user = await User.findOne({ Number: req.body.Number }, { _id: 0, "Username": 1, "Email": 1, "Number": 1 });
         if (user) {
-            console.log(user);
             return res.send(user)
         }
         else {

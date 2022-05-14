@@ -3,15 +3,13 @@ import '../../../css/search.css'
 import Box from '@mui/material/Box'
 import SearchIcon from '@mui/icons-material/Search'
 
-export default function Search({placeholder='What are you Searching for?'}) {
+export default function SearchMedium({ placeholder = 'What are you Searching for?' }) {
     const [query, SetQuery] = React.useState('')
+
     return (
         <>
             <Box sx={{
-                textAlign: 'center', display: "flex", justifyContent: 'center', alignItems: 'center', width: '40%', m: '0px auto', height: '64px',
-                '&:hover': {
-                    background: '#eee'
-                }
+                textAlign: 'center', display: "flex", justifyContent: 'center', alignItems: 'center', width: '80%', m: '0px auto', height: '64px',
             }}>
                 <input
                     placeholder={placeholder}

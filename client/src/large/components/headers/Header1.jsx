@@ -8,10 +8,10 @@ import Container from '@mui/material/Container';
 import PercentIcon from '@mui/icons-material/Percent';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Search from '../search/Search';
 import Login from '../login/Login';
 import { LoginContext } from '../../../context/Context'
+import City from '../drawer/City';
 
 const Header1 = () => {
     const { userData, isLogin, decrypt } = React.useContext(LoginContext)
@@ -80,17 +80,7 @@ const Header1 = () => {
                         </Box>
 
 
-                        <Box sx={{
-                            width: '130px', m: '0px auto', textAlign: 'center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: "1px solid #eee", height: "64px",
-                            '&:hover': {
-                                background: '#eee'
-                            }
-                        }}>
-                            <LocationOnIcon sx={{ fontSize: '25px', transform: 'rotateY(180deg)' }} />
-                            <Typography sx={{ fontFamily: 'Jost', fontWeight: '500' }}>
-                                Your City
-                            </Typography>
-                        </Box>
+                      <City />
 
                     </Box>
 
