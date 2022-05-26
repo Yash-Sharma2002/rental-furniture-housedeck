@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <linearGradient id="t3h92capza" x1="-60.384%" x2="61.429%" y1="130.931%" y2="33.968%">
+            <stop offset="0%" stop-color="#A3DBFF"/>
+            <stop offset="100%" stop-color="#346AA0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path fill="#FFF" d="M0 0H48V48H0z" transform="translate(-396 -544) translate(120 525) translate(130 8) translate(120 7) translate(26 4)"/>
+                            <g>
+                                <g transform="translate(-396 -544) translate(120 525) translate(130 8) translate(120 7) translate(26 4) translate(7 2) rotate(-25 30.27 6.71)">
+                                    <g fill="url(#t3h92capza)" fill-rule="nonzero" transform="translate(4.047 15.17)">
+                                        <path d="M7.027 11.049L2.684 13.325 3.513 8.504 0 5.09 4.855 4.386 7.027 0 9.198 4.386 14.054 5.09 10.541 8.504 11.37 13.326z"/>
+                                    </g>
+                                    <path stroke="#346AA0" d="M14.836 27.697L14.118 23.522 17.159 20.566 12.956 19.958 11.074 16.157 9.193 19.958 4.99 20.566 8.032 23.522 7.313 27.697 11.074 25.725z"/>
+                                    <path stroke="#346AA0" d="M10.459 0h1.17c3.502 0 6.53 2.442 7.271 5.864l1.94 8.97 1.19 11.677c.189 1.847-.414 3.687-1.66 5.065-1.244 1.378-3.014 2.164-4.87 2.164H6.563c-1.86 0-3.634-.79-4.878-2.172-1.245-1.383-1.845-3.23-1.65-5.08l1.171-11.105 1.968-9.46C3.893 2.474 6.934 0 10.459 0z"/>
+                                    <ellipse cx="11.436" cy="5.538" stroke="#346AA0" rx="2.143" ry="2.137"/>
+                                </g>
+                                <path stroke="#346AA0" stroke-linecap="round" d="M12.563 12.19C14.226 7.918 14.05 3.855 12.04 0" transform="translate(-396 -544) translate(120 525) translate(130 8) translate(120 7) translate(26 4) translate(7 2)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

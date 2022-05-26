@@ -91,3 +91,8 @@ The whole app is build using type = modules.
         Added Search to Medium website
         Added Select City for Medium and large
         Added Dummy Profile page to medium
+
+    -> Fifth Commit (26-05-2022)
+        Products, collections and build your own section in header (large) and in categories (medium)
+        Created other sections like why should i rent, rent furniture etc.
+        

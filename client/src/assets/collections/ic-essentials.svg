@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <linearGradient id="evkk99j1ja" x1="-60.384%" x2="61.429%" y1="130.931%" y2="33.968%">
+            <stop offset="0%" stop-color="#A3DBFF"/>
+            <stop offset="100%" stop-color="#346AA0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path fill="#FFF" d="M0 0H48V48H0z" transform="translate(-516 -544) translate(120 525) translate(130 8) translate(240 7) translate(26 4)"/>
+                            <g>
+                                <path stroke="#346AA0" stroke-width="1.2" d="M27.36 0h13.2v26.4h-13.2V0zm.6 10.8h13.2m-6-10.2v10.8" transform="translate(-516 -544) translate(120 525) translate(130 8) translate(240 7) translate(26 4) translate(3 9)"/>
+                                <path stroke="#346AA0" stroke-linecap="round" stroke-width="1.2" d="M.5 13.038v16.629M35.36 20v9.667" transform="translate(-516 -544) translate(120 525) translate(130 8) translate(240 7) translate(26 4) translate(3 9)"/>
+                                <g>
+                                    <g fill="url(#evkk99j1ja)" fill-rule="nonzero" transform="translate(-516 -544) translate(120 525) translate(130 8) translate(240 7) translate(26 4) translate(3 9) translate(.222 21.352)">
+                                        <path d="M0 0L35.422 0 35.422 6.14 0 6.05z"/>
+                                    </g>
+                                    <path stroke="#346AA0" stroke-width="1.2" d="M0.6 0.6L0.6 5.452 34.822 5.538 34.822 0.6z" transform="translate(-516 -544) translate(120 525) translate(130 8) translate(240 7) translate(26 4) translate(3 9) translate(.222 21.352)"/>
+                                </g>
+                                <path stroke="#346AA0" stroke-linecap="round" stroke-width="1.2" d="M.769 18.675c2.616-.075 3.818.933 3.605 3.025" transform="translate(-516 -544) translate(120 525) translate(130 8) translate(240 7) translate(26 4) translate(3 9)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

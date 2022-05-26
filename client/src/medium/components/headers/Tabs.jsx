@@ -12,7 +12,11 @@ import LoginMedium from '../login/Login';
 import { LoginContext } from '../../../context/Context';
 import SearchMedium from '../search/Search';
 import City from '../dialogs/City';
-
+import Products from '../home/Products';
+import HeaderMedium from './Header'
+import Banner from '../home/Banner';
+import Categories from '../catalog/Categories';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 export default function BottomTabs() {
@@ -28,11 +32,20 @@ export default function BottomTabs() {
                 {
                     value === 'home' ?
                         <Box sx={{ mt: '4.3rem' }}>
+                            <HeaderMedium />
                             <City />
+                            <Products />
+                            <Banner setValue={setValue} />
                         </Box>
                         : null
                 }
-
+                {
+                    value === 'categories' ?
+                        <Box>
+                            <Categories />
+                        </Box>
+                        : null
+                }
                 {
                     value === 'search' ?
                         <Box sx={{ mt: '5rem' }}>
@@ -40,6 +53,15 @@ export default function BottomTabs() {
                         </Box>
                         : null
                 }
+
+                {
+                    value === 'cart' ?
+                        <Box>
+                            This is empty now
+                        </Box>
+                        : null
+                }
+
                 {
                     value === 'me' ?
                         <Box sx={{ mt: '7rem' }}>
@@ -56,15 +78,16 @@ export default function BottomTabs() {
                         </Box>
                         : null
                 }
-                <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: "100%" }} elevation={3}>
+                <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0,  }} elevation={3}>
                     <BottomNavigation
                         value={value}
                         onChange={handleChange}
                     >
-                        <BottomNavigationAction sx={{ width: '25%' }} value='home' label="Home" icon={<HomeIcon />} />
-                        <BottomNavigationAction sx={{ width: '25%' }} value='categories' label="Categories" icon={<CategoryIcon />} />
-                        <BottomNavigationAction sx={{ width: '25%' }} value='search' label="Search" icon={<SearchIcon />} />
-                        <BottomNavigationAction sx={{ width: '25%' }} value='me' label="Me" icon={<AccountCircleIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} value='home' label="Home" icon={<HomeIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} value='categories' label="Categories" icon={<CategoryIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} value='search' label="Search" icon={<SearchIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} value='cart' label="Cart" icon={<ShoppingCartIcon sx={{ transform: 'rotateY(180deg)' }} />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} value='me' label="Me" icon={<AccountCircleIcon />} />
                     </BottomNavigation>
                 </Paper>
             </Box>

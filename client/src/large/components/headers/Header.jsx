@@ -11,25 +11,55 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Search from '../search/Search';
 import Login from '../login/Login';
 import { LoginContext } from '../../../context/Context'
+import SearchIcon from '@mui/icons-material/Search'
 import City from '../drawer/City';
+import { CatalogHelper } from '../helper/Header';
 
-const Header1 = () => {
+const Header = ({ ifOtherHeader = false }) => {
     const { userData, isLogin, decrypt } = React.useContext(LoginContext)
     const [open, setOpen] = React.useState(false);
+    const [display, setDisplay] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
     };
     return (
-        <AppBar position="fixed" sx={{ backgroundColor: 'white', color: 'mediumblue', boxShadow: '0px 2px 0px -1px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)' }}>
+        <AppBar onClick={() => setDisplay(!display)} position="fixed" sx={{ backgroundColor: 'white', color: 'mediumblue', boxShadow: '0px 2px 0px -1px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)' }}>
             <Container maxWidth="4000px">
                 <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '90%', m: '0px auto' }}>
 
                     <Link href="/">
                         <img src={require("../../../assets/logos/houseDeck_copy1.png")} style={{ width: '150px' }} alt="Furnitures By HouseDeck" />
                     </Link>
-                    <Search />
+                    {
+                        ifOtherHeader && display ?
+                            <Search />
+                            :
+                            <>
+                                {
+                                    ifOtherHeader ?
+                                        null :
+                                        <Search />
+                                }
+                            </>
+                    }
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly' }}>
-
+                        {
+                            ifOtherHeader && !display ?
+                                <>
+                                    <CatalogHelper />
+                                    <Box sx={{
+                                        minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderLeft: "1px solid #eee",
+                                        '&:hover': {
+                                            background: '#eee'
+                                        }
+                                    }}
+                                        onClick={() => setDisplay(!display)}>
+                                        <SearchIcon sx={{ fontSize: '25px' }} />
+                                    </Box>
+                                </>
+                                :
+                                null
+                        }
 
                         <Box sx={{
                             minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee", borderLeft: "1px solid #eee",
@@ -58,7 +88,7 @@ const Header1 = () => {
                                         }
                                     }}>
                                         <AccountCircleOutlinedIcon sx={{ fontSize: '25px' }} />
-                                        <Typography sx={{ fontFamily: 'Jost',ml:1 }}>
+                                        <Typography sx={{ fontFamily: 'Jost', ml: 1 }}>
                                             {
                                                 decrypt(userData.USERDATA_AS_USERNAME)
                                             }
@@ -80,7 +110,7 @@ const Header1 = () => {
                         </Box>
 
 
-                      <City />
+                        <City />
 
                     </Box>
 
@@ -90,4 +120,4 @@ const Header1 = () => {
         </AppBar >
     );
 };
-export default Header1;
+export default Header;

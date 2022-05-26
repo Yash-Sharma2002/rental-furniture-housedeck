@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <linearGradient id="kzogl5s1ba" x1="-60.384%" x2="61.429%" y1="130.931%" y2="33.968%">
+            <stop offset="0%" stop-color="#A3DBFF"/>
+            <stop offset="100%" stop-color="#346AA0"/>
+        </linearGradient>
+        <linearGradient id="4se8q7si2b" x1="-60.384%" x2="61.429%" y1="130.931%" y2="33.968%">
+            <stop offset="0%" stop-color="#A3DBFF"/>
+            <stop offset="100%" stop-color="#346AA0"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <path fill="#FFF" d="M0 0H48V48H0z" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4)"/>
+                        <g>
+                            <path stroke="#346AA0" stroke-linecap="round" stroke-width="1.2" d="M0.4 30.46L0.4 14.8 36.4 14.8 36.4 30.8" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4)"/>
+                            <g>
+                                <g fill="url(#kzogl5s1ba)" fill-rule="nonzero" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4) translate(25.4 16.4)">
+                                    <path d="M0.6 0L9.4 0 9.4 4.8 0.6 4.8z"/>
+                                </g>
+                                <path stroke="#346AA0" stroke-width="1.2" d="M1.2 0.6L8.8 0.6 8.8 4.2 1.2 4.2z" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4) translate(25.4 16.4)"/>
+                            </g>
+                            <g>
+                                <g fill="url(#kzogl5s1ba)" fill-rule="nonzero" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4) translate(25.4 21.4)">
+                                    <path d="M0.6 0.6L9.4 0.6 9.4 5.4 0.6 5.4z"/>
+                                </g>
+                                <path stroke="#346AA0" stroke-width="1.2" d="M1.2 1.2L8.8 1.2 8.8 4.8 1.2 4.8z" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4) translate(25.4 21.4)"/>
+                            </g>
+                            <path stroke="#346AA0" stroke-linecap="round" stroke-width="1.2" d="M6.31 14.8L3.6 10.034 8.4 3.6" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4)"/>
+                            <g>
+                                <g fill="url(#4se8q7si2b)" fill-rule="nonzero" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4) rotate(-46 7.249 -4.64)">
+                                    <path d="M2 0.6L2.8 0.6 4.4 3.8 0.4 3.8z"/>
+                                </g>
+                                <path stroke="#346AA0" stroke-width="1.2" d="M2.328.997L2.4.953l.072.044-.072.145-.072-.145h0zm.043.203l-1 2h2.058l-1-2h-.058z" transform="translate(-916 -544) translate(125 533) translate(770 7) translate(21 4) translate(6 4) rotate(-46 7.249 -4.64)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -36,6 +36,9 @@ const ContextProvider = ({ children }) => {
         setCity(data)
         try {
             localStorage.setItem('CENTER_DATA', JSON.stringify(encrypt(data)));
+            setMessage(`The City has been successfully changed to ${data}`)
+            setMessageType("success")
+            setShow(true)
         } catch (err) {
             return '';
         }
@@ -51,7 +54,17 @@ const ContextProvider = ({ children }) => {
         return decryptedData
     }
 
+    
+    function toTitle(str) {
+        return str.replace(
+          /\w\S*/g,
+          function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          }
+        );
+      }
 
+      
     function loadUserData() {
         try {
             const serializedState = localStorage.getItem('START_DATA');
@@ -126,7 +139,7 @@ const ContextProvider = ({ children }) => {
     return (
         <LoginContext.Provider value={{
             message, setMessage, messageType,
-            setMessageType, show, setShow, handleAlertClose, userData, isLogin, city, handleData, encrypt, decrypt
+            setMessageType, show, setShow, handleAlertClose, userData, isLogin, city, handleData, encrypt, decrypt,toTitle
         }}>
             {children}
             < Snackbar open={show} autoHideDuration={6000} onClose={handleAlertClose}>
