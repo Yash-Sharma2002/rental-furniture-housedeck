@@ -9,6 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Zoom from '@mui/material/Zoom';
 import { ProductsImgData } from '../../constants/data'
 
@@ -30,14 +31,14 @@ export default function Home() {
                         {
                             ProductsImgData.map((data, index) => {
                                 return (
-                                    <Box key={index}>
+                                    <Link href={data.url} key={index} sx={{textDecoration:'none'}}>
                                         <Typography sx={{
                                             fontFamily: 'Jost', fontSize: '14px', background: 'white',
                                             color: 'mediumblue',cursor:'pointer',mt:-3
                                         }}>
                                             {data.name.toUpperCase()}
                                         </Typography>
-                                    </Box>
+                                    </Link>
                                 )
                             })
                         }

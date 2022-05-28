@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './large/webpages/Home';
 import { useMediaQuery } from '@mui/material'
 import HomeMedium from './medium/webpages/Home';
+import Packages from './large/webpages/Packages';
 
 
 function Large() {
@@ -11,6 +12,7 @@ function Large() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
+          <Route exact path='/packages=:packages&tags=:tag' element={<Packages />} />
         </Routes>
       </BrowserRouter>
     </>

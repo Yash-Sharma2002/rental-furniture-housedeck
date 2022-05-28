@@ -58,7 +58,7 @@ export default function City() {
                     maxWidth={false}
                 >
                     <Box sx={{ textAlign: 'right' }} >
-                        <CloseIcon onClick={handleClose} sx={{ cursor: 'pointer' }} />
+                        <CloseIcon onClick={handleClose} sx={{ cursor: 'pointer',mr:1,mt:1 }} />
                     </Box>
                     <Box sx={{ width: '100%' }}>
                         <Box sx={{ textAlign: 'center', m: 7 }}>
@@ -87,12 +87,12 @@ export default function City() {
                                 }} />
                             <SearchIcon onClick={Selector} sx={{ background: 'mediumblue', color: 'white', cursor: 'pointer', px: 1, height: '39.4px', }} />
                         </Box>
-                        <Box onClick={handleClose} sx={{ display: 'flex', flexWrap: 'wrap', padding: '15px', m: '10px auto', textAlign: 'center', justifyContent: 'center' }}>
+                        <Box onClick={handleClose} sx={{display: 'flex', flexWrap: 'wrap', padding: '15px', m: '10px auto', alignItems:"center", justifyContent: 'center' }}>
                             {
                                 data ?
                                     <>
                                         {data.map((data, index) =>
-                                            <Button key={index} sx={{ width: '20%', display: 'block', color: 'mediumblue', textTransform: 'none', textAlign: 'center', padding: '20px 0px', cursor: 'pointer', boxShadow: 3, mr: 3, mb: 3 }}
+                                            <Button key={index} sx={{ width: '20%', display: 'block', color: 'mediumblue', textTransform: 'none', textAlign: 'center', padding: '20px 0px', cursor: 'pointer', boxShadow: 3, m:1}}
                                                 onClick={() => handleData(data.name)}
                                             >
                                                 <img style={{ width: '50px', height: '50px' }} src={data.url} alt={data.id} />
@@ -103,7 +103,7 @@ export default function City() {
                                     :
                                     <>
                                         {CitiesImg.map((data, index) =>
-                                            <Button key={index} sx={{ width: '20%', display: 'block', color: 'mediumblue', textTransform: 'none', textAlign: 'center', padding: '20px 0px', cursor: 'pointer', boxShadow: 3, mr: 3, mb: 3 }}
+                                            <Button key={index} sx={{ width: '20%', display: 'block', color: 'mediumblue', textTransform: 'none', textAlign: 'center', padding: '20px 0px', cursor: 'pointer', boxShadow: 3, m:1}}
                                                 onClick={() => handleData(data.name)}
                                             >
                                                 <img style={{ width: '50px', height: '50px' }} src={data.url} alt={data.id} />

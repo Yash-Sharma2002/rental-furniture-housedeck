@@ -1,23 +1,23 @@
 import React from 'react'
 import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material'
-import { LoginContext } from '../../../context/Context'
+// import { LoginContext } from '../../../context/Context'
 
 
 export default function Banner({ setValue }) {
-    const { city } = React.useContext(LoginContext)
+    // const { city } = React.useContext(LoginContext)
     return (
         <>
-            <Typography sx={{ fontSize: '18px', mt: 4, fontFamily: 'Jost', opacity: '0.9', textAlign: 'center' }}>Rent Furniture & Appliances in {city}</Typography>
-            <img src={require("../../../assets/banner/banner.webp")} alt="Banner" style={{ width: '100%', marginTop: '10px' }} />
+            {/* <Typography sx={{ fontSize: '18px', mt: 4, fontFamily: 'Jost', opacity: '0.9', textAlign: 'center' }}>Rent Furniture & Appliances in {city}</Typography>
+            <img src={require("../../../assets/banner/banner.webp")} alt="Banner" style={{ width: '100%', marginTop: '10px' }} /> */}
             <Typography sx={{ fontSize: '20px', letterSpacing: "5px", mt: 4, fontFamily: 'Jost', opacity: '0.9', textAlign: 'center' }}>WHY YOU SHOULD RENT!</Typography>
             <Box sx={{
-               display: 'flex',
-               justifyContent: 'center',
-               alignItems: 'baseline',
-               flexWrap: 'wrap',
-               mt: 5
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'baseline',
+                flexWrap: 'wrap',
+                mt: 5
             }}>
-                <Card sx={{ maxWidth: 345,m:'10px' }}>
+                <Card sx={{ maxWidth: 345, my: 2, m: '10px' }}>
                     <CardMedia
                         component="img"
                         height="300"
@@ -46,7 +46,7 @@ export default function Banner({ setValue }) {
                         </Typography>
                     </CardContent>
                 </Card>
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: 345, my: 2 }}>
                     <CardMedia
                         component="img"
                         height="300"
@@ -75,7 +75,7 @@ export default function Banner({ setValue }) {
                         </Typography>
                     </CardContent>
                 </Card>
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: 345, my: 2 }}>
                     <CardMedia
                         component="img"
                         height="300"

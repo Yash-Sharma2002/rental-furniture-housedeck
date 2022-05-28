@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Link from '@mui/material/Link';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -59,10 +60,10 @@ export default function Catalog() {
         <>
             <Box sx={{ width: '100%' }}>
                 <Box sx={{ border: 1, borderColor: 'divider' }}>
-                    <Tabs centered value={value} onChange={handleChange} aria-label="basic tabs example">
-                        <Tab label="PRODUCTS" {...a11yProps(0)} />
-                        <Tab label="COLLECTIONS" {...a11yProps(1)} />
-                        <Tab label="BUILD YOUR OWN" {...a11yProps(2)} />
+                    <Tabs centered value={value} onChange={handleChange}>
+                        <Tab sx={{ textTransform: 'none',}} label="Products" {...a11yProps(0)} />
+                        <Tab sx={{ textTransform: 'none',}} label="Collections" {...a11yProps(1)} />
+                        <Tab sx={{ textTransform: 'none',}} label="Build Your Own" {...a11yProps(2)} />
                     </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}>
@@ -79,10 +80,11 @@ export default function Catalog() {
                         {
                             ProductsImgData.map((data, idx) => {
                                 return (
-                                    <Box key={idx} sx={{
+                                    <Link href={data.url} key={idx} sx={{
                                         padding: '20px',
                                         boxShadow: 1,
-                                        height:'100px',
+                                        textDecoration:'none',
+                                        height: '100px',
                                         cursor: 'pointer',
                                         transition: '.2s all',
                                         '&:hover': {
@@ -96,7 +98,7 @@ export default function Catalog() {
                                         }}>
                                             {data.name.toUpperCase()}
                                         </Typography>
-                                    </Box>
+                                    </Link>
                                 )
                             })
                         }
@@ -116,10 +118,11 @@ export default function Catalog() {
                         {
                             CollectionImgData.map((data, idx) => {
                                 return (
-                                    <Box key={idx} sx={{
+                                    <Link href={data.url} key={idx} sx={{
                                         padding: '20px',
                                         boxShadow: 1,
-                                        height:'100px',
+                                        textDecoration:'none',
+                                        height: '100px',
                                         cursor: 'pointer',
                                         transition: '.2s all',
                                         '&:hover': {
@@ -133,7 +136,7 @@ export default function Catalog() {
                                         }}>
                                             {data.name.toUpperCase()}
                                         </Typography>
-                                    </Box>
+                                    </Link>
                                 )
                             })
                         }
@@ -152,7 +155,7 @@ export default function Catalog() {
                         <Box sx={{ width: '25%' }}>
                             <Typography sx={{ textAlign: 'start', color: 'mediumblue', fontSize: "16px", fontFamily: "Jost" }}>Unleash the designer in you and create a package that suits your needs.</Typography>
                         </Box>
-                            <Divider orientation="vertical" flexItem light={false} />
+                        <Divider orientation="vertical" flexItem light={false} />
                         <Box sx={{
                             display: 'flex',
                             justifyContent: 'space-evenly',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Card, CardMedia, CardContent,Menu } from '@mui/material'
+import { Box, Typography, Card, CardMedia, CardContent, Menu } from '@mui/material'
 import { LoginContext } from '../../../context/Context'
 import { ProductsImgData } from '../../../constants/data'
 
@@ -17,7 +17,9 @@ export default function Banner() {
     return (
         <>
             <Typography sx={{ fontSize: '18px', mt: 4, fontFamily: 'Jost', opacity: '0.9', textAlign: 'center' }}>Rent Furniture & Appliances in {city}</Typography>
-            <img src={require("../../../assets/banner/banner.webp")} alt="Banner" style={{ width: '100%', marginTop: '10px' }} />
+            <Box sx={{ textAlign: 'center',}}>
+                <img src={require("../../../assets/banner/banner.webp")} alt="Banner" style={{ width: '85%', boxShadow: '0px 2px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 2px 9px 0px rgb(0 0 0 / 12%)', borderRadius: 6, margin: "0px auto", marginTop: '10px' }} />
+            </Box>
             <Typography sx={{ fontSize: '20px', letterSpacing: "5px", mt: 4, fontFamily: 'Jost', opacity: '0.9', textAlign: 'center' }}>WHY YOU SHOULD RENT!</Typography>
             <Box sx={{
                 display: 'flex',
@@ -46,9 +48,9 @@ export default function Banner() {
                             fontFamily: 'Jost',
                             opacity: '0.9',
                             my: 4,
-                            cursor:'pointer'
+                            cursor: 'pointer'
                         }}
-                        onMouseEnter={handleClick}>
+                            onMouseEnter={handleClick}>
 
                             Explore Products
                         </Typography>
@@ -75,9 +77,9 @@ export default function Banner() {
                             fontFamily: 'Jost',
                             opacity: '0.9',
                             my: 4,
-                            cursor:'pointer'
+                            cursor: 'pointer'
                         }}
-                        onMouseEnter={handleClick}>
+                            onMouseEnter={handleClick}>
                             Explore Products
                         </Typography>
                     </CardContent>
@@ -103,16 +105,16 @@ export default function Banner() {
                             fontFamily: 'Jost',
                             opacity: '0.9',
                             my: 4,
-                            cursor:'pointer'
+                            cursor: 'pointer'
                         }}
-                        onMouseEnter={handleClick}>
+                            onMouseEnter={handleClick}>
                             Explore Products
                         </Typography>
                     </CardContent>
                 </Card>
             </Box>
 
-            
+
             <Menu
                 anchorEl={anchorEl}
                 open={open}

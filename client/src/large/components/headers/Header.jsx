@@ -23,7 +23,7 @@ const Header = ({ ifOtherHeader = false }) => {
         setOpen(true);
     };
     return (
-        <AppBar onClick={() => setDisplay(!display)} position="fixed" sx={{ backgroundColor: 'white', color: 'mediumblue', boxShadow: '0px 2px 0px -1px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)' }}>
+        <AppBar position="fixed" sx={{ backgroundColor: 'white', color: 'mediumblue', boxShadow: '0px 2px 0px -1px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)' }}>
             <Container maxWidth="4000px">
                 <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '90%', m: '0px auto' }}>
 
@@ -47,20 +47,19 @@ const Header = ({ ifOtherHeader = false }) => {
                             ifOtherHeader && !display ?
                                 <>
                                     <CatalogHelper />
-                                    <Box sx={{
-                                        minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderLeft: "1px solid #eee",
-                                        '&:hover': {
-                                            background: '#eee'
-                                        }
-                                    }}
-                                        onClick={() => setDisplay(!display)}>
-                                        <SearchIcon sx={{ fontSize: '25px' }} />
-                                    </Box>
                                 </>
                                 :
                                 null
                         }
-
+                        <Box sx={{
+                            minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderLeft: "1px solid #eee",
+                            '&:hover': {
+                                background: '#eee'
+                            }
+                        }}
+                            onClick={() => setDisplay(!display)}>
+                            <SearchIcon sx={{ fontSize: '25px' }} />
+                        </Box>
                         <Box sx={{
                             minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee", borderLeft: "1px solid #eee",
                             '&:hover': {
