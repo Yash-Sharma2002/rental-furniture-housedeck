@@ -5,10 +5,20 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { LoginContext } from '../../../context/Context'
-import { CollectionImgData, ProductsImgData } from '../../../constants/data';
+import { AvailabilityData, CollectionImgData, ProductsImgData } from '../../../constants/data';
+import Upcoming from '../../../large/components/overall/Upcoming';
+import NotAvalable from '../../../large/components/overall/NotAvalable';
 
-export default function Categories() {
+// 0 => Not Available
+// 1 => Coming Soon
+// 2 => Data is available 
+
+
+export default function Categories({ category = 'products', subCategory = 'electronics' }) {
     const [value, setValue] = React.useState(0);
+
+    const { toTitle, city } = React.useContext(LoginContext)
+    const editedCity = city.toLowerCase().replace(/ /, "_")
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -18,28 +28,70 @@ export default function Categories() {
             <Box sx={{ width: '100%' }}>
                 <Box>
                     <Tabs value={value} onChange={handleChange} centered>
-                        <Tab sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }} label="Products" {...a11yProps(0)} />
-                        <Tab sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }} label="Collections" {...a11yProps(1)} />
+                        <Tab sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }}  label="Products" {...allyProps(0)}   />
+                        <Tab sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }}  label="Collections" {...allyProps(1)} />
                     </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}>
-                    <ProductTab />
+                    <ProductTab toTitle={toTitle} editedCity={editedCity} subCategory={subCategory} />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <CollectionTab />
+                    <CollectionTab toTitle={toTitle} editedCity={editedCity} subCategory={subCategory} />
                 </TabPanel>
             </Box>
         </>
     )
 }
 
-function ProductTab() {
-    const { toTitle } = React.useContext(LoginContext)
+function ProductTab({ toTitle, editedCity,subCategory }) {
     const [value, setValue] = React.useState(0);
+    const [availabilty, setAvailability] = React.useState(0)
+    const [tag, setTags] = React.useState(ProductsImgData[0].name)
+    const packages = 'products'
+
+
+    const getAvailableData = React.useCallback(() => {
+        if (Object.keys(AvailabilityData).includes(editedCity)) {
+            const cityData = AvailabilityData[editedCity]
+            if (Object.keys(cityData).includes(packages)) {
+                const packageData = cityData[packages]
+                if (packageData['available'].includes(tag.replace(/_/, " "))) {
+                    setAvailability(2)
+                    return
+                }
+                else if (packageData['not_available'].includes(tag.replace(/_/, " "))) {
+                    setAvailability(1)
+                    return
+                }
+                else {
+                    console.log('wrong url');
+                    // Can Redirect to 404 not found
+                    // navigate('/') 
+                }
+            }
+        }
+        else {
+            // very less chance of this happening
+            setAvailability(0)
+            return
+        }
+    },
+        [tag, editedCity,],
+    );
+
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        setTags(ProductsImgData[newValue].name)
+        getAvailableData()
     };
+
+    React.useEffect(() => {
+        getAvailableData()
+    }, [getAvailableData])
+
+
     return (
         <>
             <Box sx={{
@@ -58,7 +110,7 @@ function ProductTab() {
                         {
                             ProductsImgData.map((data, idx) => {
                                 return (
-                                    <Tab key={idx} sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }} label={toTitle(data.name)} {...a11yProps(idx)} />
+                                    <Tab key={idx} sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }} label={toTitle(data.name)}  {...allyProps(idx)} />
                                 )
                             })
                         }
@@ -66,19 +118,85 @@ function ProductTab() {
                 </Box>
             </Box>
             <TabPanel value={value} index={value}>
-                {value} not found
+                <Box sx={{ display: availabilty === 0 ? 'block' : 'none' }}>
+                    <NotAvalable />
+                </Box>
+                <Box sx={{ display: availabilty === 1 ? 'block' : 'none' }}>
+                    <Upcoming />
+                </Box>
+                <Box sx={{ display: availabilty === 2 ? 'block' : 'none' }}>
+                    It is here
+                </Box>
+
+                {
+                    toTitle(ProductsImgData[value].name)
+                }
+                <br />
+                {
+                    editedCity
+                }
+                <br />
+                {
+                    availabilty
+                }
+                <br />
+                {
+                    packages
+                }
             </TabPanel>
         </>
     )
 }
 
-function CollectionTab() {
-    const { toTitle } = React.useContext(LoginContext)
+function CollectionTab({ toTitle, editedCity,subCategory }) {
     const [value, setValue] = React.useState(0);
+    const [availabilty, setAvailability] = React.useState(0)
+    const [tag, setTags] = React.useState(CollectionImgData[0].name)
+    const packages = 'collections'
+
+
+    const getAvailableData = React.useCallback(() => {
+        if (Object.keys(AvailabilityData).includes(editedCity)) {
+            const cityData = AvailabilityData[editedCity]
+            if (Object.keys(cityData).includes(packages)) {
+                const packageData = cityData[packages]
+                if (packageData['available'].includes(tag.replace(/_/, " "))) {
+                    setAvailability(2)
+                    return
+                }
+                else if (packageData['not_available'].includes(tag.replace(/_/, " "))) {
+                    setAvailability(1)
+                    return
+                }
+                else {
+                    console.log('wrong url');
+                    // Can Redirect to 404 not found
+                    // navigate('/') 
+                }
+            }
+        }
+        else {
+            // very less chance of this happening
+            setAvailability(0)
+            return
+        }
+    },
+        [tag, editedCity,],
+    );
+
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        setTags(CollectionImgData[newValue].name)
+        getAvailableData()
     };
+
+    React.useEffect(() => {
+        getAvailableData()
+    }, [getAvailableData])
+
+
     return (
         <>
             <Box sx={{
@@ -93,16 +211,40 @@ function CollectionTab() {
                         {
                             CollectionImgData.map((data, idx) => {
                                 return (
-                                    <Tab key={idx} sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }} label={toTitle(data.name)} {...a11yProps(idx)} />
+                                    <Tab key={idx} sx={{ textTransform: 'none', fontFamily: "Jost", fontSize: '18px' }}  label={toTitle(data.name)}  {...allyProps(idx)} />
                                 )
                             })
                         }
                     </Tabs>
                 </Box>
             </Box>
-            
+
             <TabPanel value={value} index={value}>
-                {value} not found
+                <Box sx={{ display: availabilty === 0 ? 'block' : 'none' }}>
+                    <NotAvalable />
+                </Box>
+                <Box sx={{ display: availabilty === 1 ? 'block' : 'none' }}>
+                    <Upcoming />
+                </Box>
+                <Box sx={{ display: availabilty === 2 ? 'block' : 'none' }}>
+                    It is here
+                </Box>
+
+                {
+                    toTitle(CollectionImgData[value].name)
+                }
+                <br />
+                {
+                    editedCity
+                }
+                <br />
+                {
+                    availabilty
+                }
+                <br />
+                {
+                    packages
+                }
             </TabPanel>
         </>
     )
@@ -135,9 +277,10 @@ TabPanel.propTypes = {
     value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
+function allyProps(index) {
     return {
         id: `simple-tab-${index}`,
         'aria-controls': `simple-tabpanel-${index}`,
     };
 }
+

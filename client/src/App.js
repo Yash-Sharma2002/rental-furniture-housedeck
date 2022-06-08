@@ -26,7 +26,11 @@ function Medium() {
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<HomeMedium />} />
-          <Route exact path='/home' element={<HomeMedium />} />
+          {/* <Route exact path='/type=home' element={<HomeMedium />} />
+          <Route exact path='/type=me' element={<HomeMedium />} />
+          <Route exact path='/type=search' element={<HomeMedium />} />
+          <Route exact path='/type=categories' element={<HomeMedium />} /> */}
+          <Route exact path='/type=:type&package=:packages&tag=:tag' element={<HomeMedium />} />
         </Routes>
       </BrowserRouter>
     </>

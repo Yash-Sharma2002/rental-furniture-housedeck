@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography,Link } from '@mui/material'
 import { CollectionImgData, ProductsImgData } from '../../../constants/data'
 
 export default function Products() {
@@ -20,13 +20,14 @@ export default function Products() {
                 {
                     ProductsImgData.map((data, index) => {
                         return (
-                            <Box key={index} sx={{
+                            <Link href={`type=categories&package=products&tag=${data.name.replace(/ /, "_")}`} key={index} sx={{
                                 padding: '20px',
                                 boxShadow: 1,
                                 height: '100px',
                                 width: '80px',
                                 cursor: 'pointer',
                                 textAlign: 'center',
+                                textDecoration: 'none',
                                 m: '7px'
                             }}>
                                 <img src={data.img} alt=""  />
@@ -36,7 +37,7 @@ export default function Products() {
                                 }}>
                                     {data.name.toUpperCase()}
                                 </Typography>
-                            </Box>
+                            </Link>
                         )
                     })
                 }
@@ -58,7 +59,7 @@ export default function Products() {
                     {
                         CollectionImgData.map((data, index) => {
                             return (
-                                <Box key={index} sx={{
+                                <Link href={`type=categories&package=collections&tag=${data.name.replace(/ /, "_")}`} key={index} sx={{
                                     padding: '20px',
                                     boxShadow: 1,
                                     height: '100px',
@@ -74,7 +75,7 @@ export default function Products() {
                                     }}>
                                         {data.name.toUpperCase()}
                                     </Typography>
-                                </Box>
+                                </Link>
                             )
                         })
                     }

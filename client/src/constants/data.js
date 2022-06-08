@@ -54,11 +54,11 @@ export const ProductsImgData = [
 
 
 export const CollectionImgData = [
-  { img: Binge_Watch, url: '/packages=collections&tags=binge_watch_collections', name: "binge watch collection", },
+  { img: Binge_Watch, url: '/packages=collections&tags=binge_watch_collections', name: "binge watch collections", },
   { img: Special_Deals, url: '/packages=collections&tags=special_deals', name: "special deals" },
   { img: Most_Popular, url: '/packages=collections&tags=most_popular', name: "most popular" },
   { img: Essentials, url: '/packages=collections&tags=essentials', name: "essentials" },
-  { img: Newly_Launched, url: '/packages=collections&tags=launched', name: "newly launched" },
+  { img: Newly_Launched, url: '/packages=collections&tags=newly_launched', name: "newly launched" },
   { img: Storage_Combos, url: '/packages=collections&tags=storage_combos', name: "storage combos", },
   { img: Award_Winners, url: '/packages=collections&tags=award_winners', name: "award winners" },
 ];

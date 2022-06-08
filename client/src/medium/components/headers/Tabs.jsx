@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
@@ -21,10 +22,18 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function BottomTabs() {
     const { userData, isLogin, decrypt } = React.useContext(LoginContext)
-    const [value, setValue] = React.useState('home');
+    const navigate = useNavigate()
+    const { type, packages, tag} = useParams()
+    console.log(type, packages, tag);
+    const [value, setValue] = React.useState(type ? type : 'home');
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const redirect = (name) => {
+        navigate(`/type=${name}`)
+    }
+
     return (
         <>
             <Box sx={{ pb: 7 }} >
@@ -42,7 +51,7 @@ export default function BottomTabs() {
                 {
                     value === 'categories' ?
                         <Box>
-                            <Categories />
+                            <Categories category={packages} subCategory={tag} />
                         </Box>
                         : null
                 }
@@ -78,16 +87,16 @@ export default function BottomTabs() {
                         </Box>
                         : null
                 }
-                <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0,  }} elevation={3}>
+                <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, }} elevation={3}>
                     <BottomNavigation
                         value={value}
                         onChange={handleChange}
                     >
-                        <BottomNavigationAction sx={{ width: '20%' }} value='home' label="Home" icon={<HomeIcon />} />
-                        <BottomNavigationAction sx={{ width: '20%' }} value='categories' label="Categories" icon={<CategoryIcon />} />
-                        <BottomNavigationAction sx={{ width: '20%' }} value='search' label="Search" icon={<SearchIcon />} />
-                        <BottomNavigationAction sx={{ width: '20%' }} value='cart' label="Cart" icon={<ShoppingCartIcon sx={{ transform: 'rotateY(180deg)' }} />} />
-                        <BottomNavigationAction sx={{ width: '20%' }} value='me' label="Me" icon={<AccountCircleIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} onClick={() => redirect('home')} value='home' label="Home" icon={<HomeIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} onClick={() => redirect('categories')} value='categories' label="Categories" icon={<CategoryIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} onClick={() => redirect('search')} value='search' label="Search" icon={<SearchIcon />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} onClick={() => redirect('cart')} value='cart' label="Cart" icon={<ShoppingCartIcon sx={{ transform: 'rotateY(180deg)' }} />} />
+                        <BottomNavigationAction sx={{ width: '20%' }} onClick={() => redirect('me')} value='me' label="Me" icon={<AccountCircleIcon />} />
                     </BottomNavigation>
                 </Paper>
             </Box>
