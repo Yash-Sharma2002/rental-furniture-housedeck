@@ -20,7 +20,7 @@ export default function Products() {
                 {
                     ProductsImgData.map((data, index) => {
                         return (
-                            <Link href={`type=categories&package=products&tag=${data.name.replace(/ /, "_")}`} key={index} sx={{
+                            <Link href={data.url} key={index} sx={{
                                 padding: '20px',
                                 boxShadow: 1,
                                 height: '100px',
@@ -59,7 +59,7 @@ export default function Products() {
                     {
                         CollectionImgData.map((data, index) => {
                             return (
-                                <Link href={`type=categories&package=collections&tag=${data.name.replace(/ /, "_")}`} key={index} sx={{
+                                <Link href={data.url} key={index} sx={{
                                     padding: '20px',
                                     boxShadow: 1,
                                     height: '100px',

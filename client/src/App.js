@@ -12,7 +12,7 @@ function Large() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/home' element={<Home />} />
-          <Route exact path='/packages=:packages&tags=:tag' element={<Packages />} />
+          <Route exact path='/categories/:packages/:tag' element={<Packages />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -26,11 +26,8 @@ function Medium() {
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<HomeMedium />} />
-          {/* <Route exact path='/type=home' element={<HomeMedium />} />
-          <Route exact path='/type=me' element={<HomeMedium />} />
-          <Route exact path='/type=search' element={<HomeMedium />} />
-          <Route exact path='/type=categories' element={<HomeMedium />} /> */}
-          <Route exact path='/type=:type&package=:packages&tag=:tag' element={<HomeMedium />} />
+          <Route exact path='/:type' element={<HomeMedium />} />
+          <Route exact path='/:type/:packages/:tag' element={<HomeMedium />} />
         </Routes>
       </BrowserRouter>
     </>

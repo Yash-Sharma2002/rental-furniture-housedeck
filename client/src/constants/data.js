@@ -39,28 +39,28 @@ export const CitiesImg = [
 
 
 export const ProductsImgData = [
-  { img: Electronics, url: '/packages=products&tags=electronics', name: "electronics", },
-  { img: Appliances, url: '/packages=products&tags=appliances', name: "appliances" },
-  { img: Fitness, url: '/packages=products&tags=fitness', name: "fitness" },
-  { img: Full_Home, url: '/packages=products&tags=full_home', name: "full home" },
-  { img: Storage, url: '/packages=products&tags=storage', name: "storage" },
-  { img: Work_Stations, url: '/packages=products&tags=work_stations', name: "work stations", },
-  { img: Kids_Room, url: '/packages=products&tags=kids_room', name: "kids room" },
-  { img: Dining_Room, url: '/packages=products&tags=dining_room', name: "dining room" },
-  { img: Two_Wheelers, url: '/packages=products&tags=two_wheelers', name: "2-wheelers" },
+  { img: Electronics, url: '/categories/products/electronics', name: "electronics", },
+  { img: Appliances, url: '/categories/products/appliances', name: "appliances" },
+  { img: Fitness, url: '/categories/products/fitness', name: "fitness" },
+  { img: Full_Home, url: '/categories/products/full_home', name: "full home" },
+  { img: Storage, url: '/categories/products/storage', name: "storage" },
+  { img: Work_Stations, url: '/categories/products/work_stations', name: "work stations", },
+  { img: Kids_Room, url: '/categories/products/kids_room', name: "kids room" },
+  { img: Dining_Room, url: '/categories/products/dining_room', name: "dining room" },
+  { img: Two_Wheelers, url: '/categories/products/two_wheelers', name: "two wheelers" },
 ];
 
 
 
 
 export const CollectionImgData = [
-  { img: Binge_Watch, url: '/packages=collections&tags=binge_watch_collections', name: "binge watch collections", },
-  { img: Special_Deals, url: '/packages=collections&tags=special_deals', name: "special deals" },
-  { img: Most_Popular, url: '/packages=collections&tags=most_popular', name: "most popular" },
-  { img: Essentials, url: '/packages=collections&tags=essentials', name: "essentials" },
-  { img: Newly_Launched, url: '/packages=collections&tags=newly_launched', name: "newly launched" },
-  { img: Storage_Combos, url: '/packages=collections&tags=storage_combos', name: "storage combos", },
-  { img: Award_Winners, url: '/packages=collections&tags=award_winners', name: "award winners" },
+  { img: Binge_Watch, url: '/categories/collections/binge_watch_collections', name: "binge watch collections", },
+  { img: Special_Deals, url: '/categories/collections/special_deals', name: "special deals" },
+  { img: Most_Popular, url: '/categories/collections/most_popular', name: "most popular" },
+  { img: Essentials, url: '/categories/collections/essentials', name: "essentials" },
+  { img: Newly_Launched, url: '/categories/collections/newly_launched', name: "newly launched" },
+  { img: Storage_Combos, url: '/categories/collections/storage_combos', name: "storage combos", },
+  { img: Award_Winners, url: '/categories/collections/award_winners', name: "award winners" },
 ];
 
 
@@ -69,7 +69,7 @@ export const AvailabilityData = {
   'bangalore': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -79,7 +79,7 @@ export const AvailabilityData = {
 
   'chennai': {
     'products': {
-      'available': ['electronics', 'appliances', 'two-wheelers', 'full home', 'storage', 'work stations'],
+      'available': ['electronics', 'appliances', 'two wheelers', 'full home', 'storage', 'work stations'],
       'not_available': ['kids room', 'dining room', 'fitness']
     },
     'collections': {
@@ -91,7 +91,7 @@ export const AvailabilityData = {
   'delhi': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -102,7 +102,7 @@ export const AvailabilityData = {
   // 'faridabad': {
   //   'products': {
   //     'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-  //     'not_available': ['kids room', 'dining room', 'two-wheelers']
+  //     'not_available': ['kids room', 'dining room', 'two wheelers']
   //   },
   //   'collections': {
   //     'avalable': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -113,7 +113,7 @@ export const AvailabilityData = {
   'ghaziabad': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -124,7 +124,7 @@ export const AvailabilityData = {
   'greater_noida': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -135,7 +135,7 @@ export const AvailabilityData = {
   // 'gurgaon': {
   //   'products': {
   //     'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-  //     'not_available': ['kids room', 'dining room', 'two-wheelers']
+  //     'not_available': ['kids room', 'dining room', 'two wheelers']
   //   },
   //   'collections': {
   //     'avalable': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -146,7 +146,7 @@ export const AvailabilityData = {
   'hyderabad': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -157,7 +157,7 @@ export const AvailabilityData = {
   'mumbai': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -168,7 +168,7 @@ export const AvailabilityData = {
   'noida': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],
@@ -179,7 +179,7 @@ export const AvailabilityData = {
   'pune': {
     'products': {
       'available': ['electronics', 'appliances', 'fitness', 'full home', 'storage', 'work stations'],
-      'not_available': ['kids room', 'dining room', 'two-wheelers']
+      'not_available': ['kids room', 'dining room', 'two wheelers']
     },
     'collections': {
       'available': ['binge watch collections', 'special deals', 'most popular', 'essentials'],

@@ -24,14 +24,13 @@ export default function BottomTabs() {
     const { userData, isLogin, decrypt } = React.useContext(LoginContext)
     const navigate = useNavigate()
     const { type, packages, tag} = useParams()
-    console.log(type, packages, tag);
     const [value, setValue] = React.useState(type ? type : 'home');
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
     const redirect = (name) => {
-        navigate(`/type=${name}`)
+        navigate(`/${name}`)
     }
 
     return (
