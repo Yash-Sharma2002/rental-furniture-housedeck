@@ -47,19 +47,25 @@ const Header = ({ ifOtherHeader = false }) => {
                             ifOtherHeader && !display ?
                                 <>
                                     <CatalogHelper />
+
                                 </>
                                 :
                                 null
                         }
-                        <Box sx={{
-                            minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderLeft: "1px solid #eee",
-                            '&:hover': {
-                                background: '#eee'
-                            }
-                        }}
-                            onClick={() => setDisplay(!display)}>
-                            <SearchIcon sx={{ fontSize: '25px' }} />
-                        </Box>
+
+                        {
+                            ifOtherHeader ?
+                                <Box sx={{
+                                    minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderLeft: "1px solid #eee",
+                                    '&:hover': {
+                                        background: '#eee'
+                                    }
+                                }}
+                                    onClick={() => setDisplay(!display)}>
+                                    <SearchIcon sx={{ fontSize: '25px' }} />
+                                </Box>
+                                : null
+                        }
                         <Box sx={{
                             minWidth: '70px', m: '0px auto', textAlign: 'center', cursor: 'pointer', height: "64px", lineHeight: '78px', borderRight: "1px solid #eee", borderLeft: "1px solid #eee",
                             '&:hover': {

@@ -28,6 +28,7 @@ export default function Categories({ category = 'products', subCategory = 'elect
 
     const redirect = (name, subName) => {
         navigate(`/categories/${name}/${subName}`)
+        window.location.reload()
     }
 
     return (
@@ -50,7 +51,7 @@ export default function Categories({ category = 'products', subCategory = 'elect
     )
 }
 
-function ProductTab({ toTitle, editedCity, subCategory='electronics' }) {
+function ProductTab({ toTitle, editedCity, subCategory }) {
     const [value, setValue] = React.useState(subCategory);
     const [availabilty, setAvailability] = React.useState(0)
     const packages = 'products'
@@ -66,11 +67,11 @@ function ProductTab({ toTitle, editedCity, subCategory='electronics' }) {
             const cityData = AvailabilityData[editedCity]
             if (Object.keys(cityData).includes(packages)) {
                 const packageData = cityData[packages]
-                if (packageData['available'].includes(subCategory.replace(/_/, " "))) {
+                if (packageData['available'].includes(subCategory.replace(/_/g, " "))) {
                     setAvailability(2)
                     return
                 }
-                else if (packageData['not_available'].includes(subCategory.replace(/_/, " "))) {
+                else if (packageData['not_available'].includes(subCategory.replace(/_/g, " "))) {
                     setAvailability(1)
                     return
                 }
@@ -80,6 +81,7 @@ function ProductTab({ toTitle, editedCity, subCategory='electronics' }) {
                     // navigate('/') 
                 }
             }
+            return
         }
         else {
             // very less chance of this happening
@@ -87,9 +89,8 @@ function ProductTab({ toTitle, editedCity, subCategory='electronics' }) {
             return
         }
     },
-        [subCategory, editedCity,],
+        [packages, subCategory, editedCity,],
     );
-
 
 
     const handleChange = (event, newValue) => {
@@ -149,7 +150,7 @@ function ProductTab({ toTitle, editedCity, subCategory='electronics' }) {
     )
 }
 
-function CollectionTab({ toTitle, editedCity, subCategory='binge_watch_collections' }) {
+function CollectionTab({ toTitle, editedCity, subCategory }) {
     const [value, setValue] = React.useState(subCategory);
     const [availabilty, setAvailability] = React.useState(0)
     const packages = 'collections'
@@ -166,11 +167,11 @@ function CollectionTab({ toTitle, editedCity, subCategory='binge_watch_collectio
             const cityData = AvailabilityData[editedCity]
             if (Object.keys(cityData).includes(packages)) {
                 const packageData = cityData[packages]
-                if (packageData['available'].includes(subCategory.replace(/_/, " "))) {
+                if (packageData['available'].includes(subCategory.replace(/_/g, " "))) {
                     setAvailability(2)
                     return
                 }
-                else if (packageData['not_available'].includes(subCategory.replace(/_/, " "))) {
+                else if (packageData['not_available'].includes(subCategory.replace(/_/g, " "))) {
                     setAvailability(1)
                     return
                 }
@@ -180,6 +181,7 @@ function CollectionTab({ toTitle, editedCity, subCategory='binge_watch_collectio
                     // navigate('/') 
                 }
             }
+            return
         }
         else {
             // very less chance of this happening
@@ -187,10 +189,8 @@ function CollectionTab({ toTitle, editedCity, subCategory='binge_watch_collectio
             return
         }
     },
-        [subCategory, editedCity,],
+        [packages, subCategory, editedCity,],
     );
-
-
 
     const handleChange = (event, newValue) => {
         setValue(newValue);

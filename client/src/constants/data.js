@@ -187,3 +187,24 @@ export const AvailabilityData = {
     }
   },
 }
+
+
+export const SearchData = [
+    { package:'products',type:'categories',name: "electronics", },
+    { package:'products',type:'categories',name: "appliances" },
+    { package:'products',type:'categories',name: "fitness" },
+    { package:'products',type:'categories',name: "full home" },
+    { package:'products',type:'categories',name: "storage" },
+    { package:'products',type:'categories',name: "work stations", },
+    { package:'products',type:'categories',name: "kids room" },
+    { package:'products',type:'categories',name: "dining room" },
+    { package:'products',type:'categories',name: "two wheelers" },
+  
+    { package:'collections',type:'categories',name: "binge watch collections", },
+    { package:'collections',type:'categories',name: "special deals" },
+    { package:'collections',type:'categories',name: "most popular" },
+    { package:'collections',type:'categories',name: "essentials" },
+    { package:'collections',type:'categories',name: "newly launched" },
+    { package:'collections',type:'categories',name: "storage combos", },
+    { package:'collections',type:'categories',name: "award winners" },  
+]
